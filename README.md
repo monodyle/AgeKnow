@@ -8,7 +8,11 @@ If you don't know how to use, press *?* button to show help box.
 
 ![Demo](http://i.imgur.com/7AZ8a9W.png "Demo")
 
-# Download:
+I sure that u never see it before.
+This is revolutionary technology!
+It's top notch with each feature.
+
+# Download
 https://github.com/monodyle/AgeKnow/releases/
 
 From meh with 💗
