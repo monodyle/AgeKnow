@@ -1,0 +1,9 @@
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\bin\Debug\AgeKnow.exe
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\bin\Debug\AgeKnow.pdb
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\obj\Debug\AgeKnow.csprojResolveAssemblyReference.cache
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\obj\Debug\AgeKnow.AgeKnow.resources
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\obj\Debug\AgeKnow.Properties.Resources.resources
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\obj\Debug\AgeKnow.csproj.GenerateResource.Cache
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\obj\Debug\AgeKnow.csproj.CoreCompileInputs.cache
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\obj\Debug\AgeKnow.exe
+C:\Users\Monody Le\source\repos\AgeKnow\AgeKnow\obj\Debug\AgeKnow.pdb
