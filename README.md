@@ -6,6 +6,7 @@ Language: CSharp
 
 If you don't know how to use, press *?* button to show help box.
 
-# Download: https://github.com/monodyle/AgeKnow/releases/
+# Download:
+https://github.com/monodyle/AgeKnow/releases/
 
 From meh with 💗
