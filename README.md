@@ -6,7 +6,7 @@ Language: CSharp
 
 If you don't know how to use, press *?* button to show help box.
 
-![Demo](//github.com/monodyle/AgeKnow/raw/master/demo.png "Demo")
+![Demo](http://i.imgur.com/7AZ8a9W.png "Demo")
 
 # Download:
 https://github.com/monodyle/AgeKnow/releases/
