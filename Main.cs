@@ -30,12 +30,12 @@ namespace AgeKnow
                 if (val < 50)
                 {
                     //MessageBox.Show("Bạn xạo lìn vãi, có thằng nào thấp dưới 50cm?", "Xạo lòn quen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MessageBox.Show("You lie, who smaller than 50cm?", "Why you lie me?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There's no one shorter than 50cm", "Why you lie to me?", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (val > 220)
                 {
                     //MessageBox.Show("Bạn xạo lìn vãi, có thằng Việt Nam nào cao trên 200cm?", "Xạo lòn quen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MessageBox.Show("You lie, who hight more than 220cm?", "Lie?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There's no one higher than 220cm", "You're a liar...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -50,7 +50,7 @@ namespace AgeKnow
                         trueh = (val / 100) + "m" + (val % 100);
                     }
                     //MessageBox.Show("Bạn cao " + trueh + "!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MessageBox.Show("You hight " + trueh + "!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Your height is " + trueh + "!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else if (height == "")
