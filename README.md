@@ -15,4 +15,8 @@ It's top notch with each feature.
 # Download
 https://github.com/monodyle/AgeKnow/releases/
 
+<<<<<<< HEAD
 From meh with 💗
+=======
+From meh with 💗
+>>>>>>> 76d3128f8d2d803ed217412507c0d494bc88c649

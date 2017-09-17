@@ -1,11 +1,14 @@
 # Changelog
 
+<<<<<<< HEAD
 v1.5
 * Added dual languages: English and Vietnamese with change languages button.
 * Change unit from centimeters to inches
 * Change minimum height and maximum height to: 21 inches and 107 inches (http://edition.cnn.com/2014/11/13/living/tallest-shortest-man-guinness/index.html)
 * Reformat to inches only
 
+=======
+>>>>>>> 76d3128f8d2d803ed217412507c0d494bc88c649
 v1.2
 * Translated language: from Vietnamese to English // You also can download AgeKnow.vi.exe
 * More Simple
