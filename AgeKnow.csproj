@@ -46,6 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="languages\lang.en.Designer.cs">
+      <DependentUpon>lang.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="languages\lang.vi.Designer.cs">
+      <DependentUpon>lang.vi.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="languages\lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lang.resx</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +69,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="languages\lang.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="languages\lang.vi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.vi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="languages\lang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>lang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,5 +106,6 @@
   <ItemGroup>
     <Content Include="ico.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

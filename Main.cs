@@ -6,19 +6,58 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
+using System.Resources;
+using System.Globalization;
 
 namespace AgeKnow
 {
     public partial class AgeKnow : Form
     {
+        CultureInfo currentCultureInfo;
         public AgeKnow()
         {
+            currentCultureInfo = new CultureInfo("en-US");
             InitializeComponent();
         }
+        
+        public void GetITrans()
+        {
+            label1.Text = GetTranslation("label1");
+            submit.Text = GetTranslation("submit");
+        }
 
+        public void HideLang()
+        {
+            lang_eng.Visible = false;
+            lang_vie.Visible = false;
+        }
+
+        private void lang_vie_Click(object sender, EventArgs e)
+        {
+            HideLang();
+            lang_eng.Visible = true;
+            currentCultureInfo = new CultureInfo("vi-VN");
+            GetITrans();
+        }
+
+        private void lang_eng_Click(object sender, EventArgs e)
+        {
+            HideLang();
+            lang_vie.Visible = true;
+            currentCultureInfo = new CultureInfo("en-US");
+            GetITrans();
+        }
+
+        public string GetTranslation(string s)
+        {
+            Assembly a = Assembly.Load("AgeKnow");
+            ResourceManager rm = new ResourceManager("AgeKnow.languages.lang", a);
+            return rm.GetString(s, currentCultureInfo);
+        }
+        
         private void submit_Click(object sender, EventArgs e)
         {
-            SendKeys.Send("{TAB}");
             // check numberic
             int n;
             string height = hightval.Text;
@@ -26,42 +65,45 @@ namespace AgeKnow
             if (isNumeric)
             {
                 // true number
+                string[] errormess = { "I sure that I've mentioned you don't fill this field number smaller than 21,5 or bigger than 107.",
+                                     "Just type a number between 21 and 107, dude!",
+                                     "Damn u. Why you type like that again?",
+                                     "Argh! I have no idea to say with you" };
+                var messagelog = errormess[new Random().Next(0, errormess.Length)];
                 int val = Int32.Parse(height);
-                if (val < 50)
+                bool ftw = false;
+                if ( val < 21 )
                 {
-                    //MessageBox.Show("Bạn xạo lìn vãi, có thằng nào thấp dưới 50cm?", "Xạo lòn quen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MessageBox.Show("You lie, who smaller than 50cm?", "Why you lie me?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // smaller than world shortest hooman
+                    if (ftw == false)
+                    {
+                        MessageBox.Show(GetTranslation("sr21mess"), GetTranslation("sr21title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ftw = true;
+                    }
+                    else if (ftw == true)
+                    {
+                        MessageBox.Show(messagelog, GetTranslation("sr21title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else if (val > 220)
+                else if (val > 107)
                 {
-                    //MessageBox.Show("Bạn xạo lìn vãi, có thằng Việt Nam nào cao trên 200cm?", "Xạo lòn quen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MessageBox.Show("You lie, who hight more than 220cm?", "Lie?", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // bigger than world heightest hooman
+                    MessageBox.Show(GetTranslation("br107mess"), GetTranslation("br107title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    //MessageBox.Show("Chiều cao của bạn là " + height + "cm!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    string trueh = "";
-                    if ((val / 100) < 1)
-                    {
-                        trueh = (val % 100) + "cm";
-                    }
-                    else
-                    {
-                        trueh = (val / 100) + "m" + (val % 100);
-                    }
-                    //MessageBox.Show("Bạn cao " + trueh + "!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MessageBox.Show("You hight " + trueh + "!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(GetTranslation("resmessage") + " " + val + " inches!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else if (height == "")
             {
-                //MessageBox.Show("Dữ liệu trống không. Vui lòng nhập số vào.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show("Your field blank. Please enter a number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // blank field
+                MessageBox.Show(GetTranslation("blankmess"), GetTranslation("blanktitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                //MessageBox.Show("Bạn nên nhập số, không phải chữ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show("You must type number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // not number
+                MessageBox.Show(GetTranslation("notnumbermess"), GetTranslation("notnumbertitle"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -69,13 +111,14 @@ namespace AgeKnow
         {
             if (e.KeyCode == Keys.Enter)
             {
+                SendKeys.Send("{TAB}");
                 submit.PerformClick();
             }
         }
 
-        private void help_Click(object sender, EventArgs e)
+        private void Help_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("seriously? dude, I worry about your reading skill.\n\njust type your hight (as `cm` unit), and click `Result`.\n\nGot it? do it now.", "My god!", MessageBoxButtons.OK);
+            MessageBox.Show(GetTranslation("help"), "My god!", MessageBoxButtons.OK);
         }
     }
 }
