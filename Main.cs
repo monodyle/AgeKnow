@@ -20,7 +20,7 @@ namespace AgeKnow
             currentCultureInfo = new CultureInfo("en-US");
             InitializeComponent();
         }
-        
+
         public void GetITrans()
         {
             label1.Text = GetTranslation("label1");
@@ -55,7 +55,7 @@ namespace AgeKnow
             ResourceManager rm = new ResourceManager("AgeKnow.languages.lang", a);
             return rm.GetString(s, currentCultureInfo);
         }
-        
+
         private void submit_Click(object sender, EventArgs e)
         {
             // check numberic
@@ -74,7 +74,6 @@ namespace AgeKnow
                 bool ftw = false;
                 if ( val < 21 )
                 {
-<<<<<<< HEAD
                     // smaller than world shortest hooman
                     if (ftw == false)
                     {
@@ -85,39 +84,15 @@ namespace AgeKnow
                     {
                         MessageBox.Show(messagelog, GetTranslation("sr21title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-=======
-                    //MessageBox.Show("Bạn xạo lìn vãi, có thằng nào thấp dưới 50cm?", "Xạo lòn quen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MessageBox.Show("There's no one shorter than 50cm", "Why you lie to me?", MessageBoxButtons.OK, MessageBoxIcon.Error);
->>>>>>> 76d3128f8d2d803ed217412507c0d494bc88c649
                 }
                 else if (val > 107)
                 {
-<<<<<<< HEAD
                     // bigger than world heightest hooman
                     MessageBox.Show(GetTranslation("br107mess"), GetTranslation("br107title"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     MessageBox.Show(GetTranslation("resmessage") + " " + val + " inches!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-=======
-                    //MessageBox.Show("Bạn xạo lìn vãi, có thằng Việt Nam nào cao trên 200cm?", "Xạo lòn quen", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MessageBox.Show("There's no one higher than 220cm", "You're a liar...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    //MessageBox.Show("Chiều cao của bạn là " + height + "cm!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    string trueh = "";
-                    if ((val / 100) < 1)
-                    {
-                        trueh = (val % 100) + "cm";
-                    }
-                    else
-                    {
-                        trueh = (val / 100) + "m" + (val % 100);
-                    }
-                    //MessageBox.Show("Bạn cao " + trueh + "!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MessageBox.Show("Your height is " + trueh + "!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
->>>>>>> 76d3128f8d2d803ed217412507c0d494bc88c649
                 }
             }
             else if (height == "")
